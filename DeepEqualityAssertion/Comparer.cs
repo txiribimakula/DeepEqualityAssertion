@@ -3,6 +3,10 @@
     public class Comparer
     {
         public bool IsEqual<T>(T x, T y) {
+            if (x.GetType().IsPrimitive || x.GetType() == typeof(string)) {
+                return x.Equals(y);
+            }
+
             var xProperties = x.GetType().GetProperties();
             var yProperties = y.GetType().GetProperties();
 
@@ -10,15 +14,9 @@
                 var xValue = xProperties[i].GetValue(x);
                 var yValue = yProperties[i].GetValue(y);
 
-                if (xProperties[i].PropertyType.IsPrimitive || xProperties[i].PropertyType == typeof(string)) {
-                    if (!xValue.Equals(yValue)) {
-                        return false;
-                    }
-                } else { 
-                    bool isEqual = IsEqual(xValue, yValue);
-                    if (!isEqual) {
-                        return false;
-                    }
+                bool isEqual = IsEqual(xValue, yValue);
+                if (!isEqual) {
+                    return false;
                 }
             }
 

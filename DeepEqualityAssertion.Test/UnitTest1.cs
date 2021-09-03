@@ -14,6 +14,7 @@ namespace DeepEqualityAssertion.Test
 
         static object[] EqualCases =
         {
+            new [] { 1, 1},
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 1 } },
             new [] {
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
@@ -41,6 +42,7 @@ namespace DeepEqualityAssertion.Test
 
         static object[] NotEqualCases =
         {
+            new [] { 1, 2},
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } },
             new [] {
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
