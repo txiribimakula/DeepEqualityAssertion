@@ -10,11 +10,11 @@
                 var xValue = xProperties[i].GetValue(x);
                 var yValue = yProperties[i].GetValue(y);
 
-                if(xProperties[i].PropertyType.IsPrimitive) {
+                if (xProperties[i].PropertyType.IsPrimitive || xProperties[i].PropertyType == typeof(string)) {
                     if (!xValue.Equals(yValue)) {
                         return false;
                     }
-                } else {
+                } else { 
                     bool isEqual = IsEqual(xValue, yValue);
                     if (!isEqual) {
                         return false;

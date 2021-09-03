@@ -19,6 +19,16 @@ namespace DeepEqualityAssertion.Test
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } }
             },
+            new [] {
+                new ClassWithClassWithIntAndClassWithIntAndString() {
+                    ClassWithInt = new ClassWithInt() { Number = 1 },
+                    ClassWithIntAndString = new ClassWithIntAndString() { Number = 1, Text = "some text" }
+                },
+                new ClassWithClassWithIntAndClassWithIntAndString() {
+                    ClassWithInt = new ClassWithInt() { Number = 1 },
+                    ClassWithIntAndString = new ClassWithIntAndString() { Number = 1, Text = "some text" }
+                }
+            }
         };
         [TestCaseSource(nameof(EqualCases))]
         public void Test_SimpleObject_Is_Equal(object item1, object item2) {
@@ -35,6 +45,16 @@ namespace DeepEqualityAssertion.Test
             new [] {
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 2 } }
+            },
+            new [] {
+                new ClassWithClassWithIntAndClassWithIntAndString() {
+                    ClassWithInt = new ClassWithInt() { Number = 1 },
+                    ClassWithIntAndString = new ClassWithIntAndString() { Number = 1, Text = "some text" }
+                },
+                new ClassWithClassWithIntAndClassWithIntAndString() {
+                    ClassWithInt = new ClassWithInt() { Number = 1 },
+                    ClassWithIntAndString = new ClassWithIntAndString() { Number = 1, Text = "other text" }
+                }
             }
         };
         [TestCaseSource(nameof(NotEqualCases))]
@@ -45,6 +65,20 @@ namespace DeepEqualityAssertion.Test
             // Assert
             Assert.That(isEqual, Is.False);
         }
+    }
+
+    public class ClassWithClassWithIntAndClassWithIntAndString
+    {
+        public ClassWithIntAndString ClassWithIntAndString { get; set; }
+
+        public ClassWithInt ClassWithInt { get; set; }
+    }
+
+    public class ClassWithIntAndString
+    {
+        public int Number { get; set; }
+
+        public string Text { get; set; }
     }
 
     public class ClassWithClassWithInt
