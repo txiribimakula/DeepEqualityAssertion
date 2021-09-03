@@ -19,6 +19,10 @@ namespace DeepEqualityAssertion.Test
             new [] { "some text", "some text"},
             new [] { new List<int>() { 1, 2 }, new List<int>() { 1, 2 } },
             new [] { new List<int>() { 1, 2 }.ToArray(), new List<int>() { 1, 2 }.ToArray() },
+            new [] {
+                new List<ClassWithInt>() { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } },
+                new List<ClassWithInt>() { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } }
+            },
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 1 } },
             new [] {
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
@@ -50,6 +54,10 @@ namespace DeepEqualityAssertion.Test
             new [] { "some text", "other text"},
             new [] { new List<int>() { 1, 2 }, new List<int>() { 1, 3 } },
             new [] { new List<int>() { 1, 2 }.ToArray(), new List<int>() { 1, 3 }.ToArray() },
+            new [] {
+                new List<ClassWithInt>() { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } },
+                new List<ClassWithInt>() { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 3 } }
+            },
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } },
             new [] {
                 new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
