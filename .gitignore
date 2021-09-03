@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/DeepEqualityAssertion/bin/Debug/net5.0
+/DeepEqualityAssertion/obj
+/DeepEqualityAssertion.Test/bin/Debug/net5.0
+/DeepEqualityAssertion.Test/obj
