@@ -10,9 +10,17 @@
                 var xValue = xProperties[i].GetValue(x);
                 var yValue = yProperties[i].GetValue(y);
 
-                if (!xValue.Equals(yValue)) {
-                    return false;
+                if(xProperties[i].PropertyType.IsPrimitive) {
+                    if (!xValue.Equals(yValue)) {
+                        return false;
+                    }
+                } else {
+                    bool isEqual = IsEqual(xValue, yValue);
+                    if (!isEqual) {
+                        return false;
+                    }
                 }
+
             }
 
             return true;
