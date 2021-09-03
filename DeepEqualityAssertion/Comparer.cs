@@ -2,7 +2,7 @@
 {
     public class Comparer
     {
-        public bool IsEqual(object x, object y) {
+        public bool IsEqual<T>(T x, T y) {
             var xProperties = x.GetType().GetProperties();
             var yProperties = y.GetType().GetProperties();
 
