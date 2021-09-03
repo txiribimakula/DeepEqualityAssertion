@@ -11,27 +11,27 @@ namespace DeepEqualityAssertion.Test
             comparer = new Comparer();
         }
 
-        [Test]
-        public void Test_SimpleObject_Is_Equal() {
-            // Arrange
-            var x = new { Number = 1 };
-            var y = new { Number = 1 };
-
+        static object[] EqualCases =
+        {
+            new [] { new { Number = 1 }, new { Number = 1 } }
+        };
+        [TestCaseSource(nameof(EqualCases))]
+        public void Test_SimpleObject_Is_Equal(object item1, object item2) {
             // Act
-            var isEqual = comparer.IsEqual(x, y);
+            var isEqual = comparer.IsEqual(item1, item2);
 
             // Assert
             Assert.That(isEqual, Is.True);
         }
 
-        [Test]
-        public void Test_SimpleObject_Is_NotEqual() {
-            // Arrange
-            var x = new { Number = 1 };
-            var y = new { Number = 2 };
-
+        static object[] NotEqualCases =
+        {
+            new [] { new { Number = 1 }, new { Number = 2 } }
+        };
+        [TestCaseSource(nameof(NotEqualCases))]
+        public void Test_SimpleObject_Is_NotEqual(object item1, object item2) {
             // Act
-            var isEqual = comparer.IsEqual(x, y);
+            var isEqual = comparer.IsEqual(item1, item2);
 
             // Assert
             Assert.That(isEqual, Is.False);
