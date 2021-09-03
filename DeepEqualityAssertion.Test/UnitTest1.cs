@@ -15,7 +15,10 @@ namespace DeepEqualityAssertion.Test
         static object[] EqualCases =
         {
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 1 } },
-            new [] { new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } }, new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } } },
+            new [] {
+                new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
+                new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } }
+            },
         };
         [TestCaseSource(nameof(EqualCases))]
         public void Test_SimpleObject_Is_Equal(object item1, object item2) {
@@ -29,7 +32,10 @@ namespace DeepEqualityAssertion.Test
         static object[] NotEqualCases =
         {
             new [] { new ClassWithInt() { Number = 1 }, new ClassWithInt() { Number = 2 } },
-            new [] { new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } }, new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 2 } } }
+            new [] {
+                new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 1 } },
+                new ClassWithClassWithInt() { ClassWithInt = new ClassWithInt() { Number = 2 } }
+            }
         };
         [TestCaseSource(nameof(NotEqualCases))]
         public void Test_SimpleObject_Is_NotEqual(object item1, object item2) {
