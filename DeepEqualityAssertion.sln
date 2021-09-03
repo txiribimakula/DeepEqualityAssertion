@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepEqualityAssertion", "DeepEqualityAssertion\DeepEqualityAssertion.csproj", "{4E3673EF-0536-44E5-816B-E6A3CBA7B5EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeepEqualityAssertion.Test", "DeepEqualityAssertion.Test\DeepEqualityAssertion.Test.csproj", "{59CBFE19-9BE3-4909-AE2B-AFAF046F876A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4E3673EF-0536-44E5-816B-E6A3CBA7B5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E3673EF-0536-44E5-816B-E6A3CBA7B5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E3673EF-0536-44E5-816B-E6A3CBA7B5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E3673EF-0536-44E5-816B-E6A3CBA7B5EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59CBFE19-9BE3-4909-AE2B-AFAF046F876A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59CBFE19-9BE3-4909-AE2B-AFAF046F876A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59CBFE19-9BE3-4909-AE2B-AFAF046F876A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59CBFE19-9BE3-4909-AE2B-AFAF046F876A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E3EA98EE-3805-409B-9854-FD2976679FBF}
+	EndGlobalSection
+EndGlobal
