@@ -14,7 +14,8 @@ namespace DeepEqualityAssertion.Test
         static object[] EqualCases =
         {
             new [] { new { Number = 1 }, new { Number = 1 } },
-            new [] { new { Text = "some text" }, new { Text = "some text" } }
+            new [] { new { Text = "some text" }, new { Text = "some text" } },
+            new [] { new { Number = 1, Text = "some text" }, new { Number = 1, Text = "some text" } }
         };
         [TestCaseSource(nameof(EqualCases))]
         public void Test_SimpleObject_Is_Equal(object item1, object item2) {
@@ -28,7 +29,8 @@ namespace DeepEqualityAssertion.Test
         static object[] NotEqualCases =
         {
             new [] { new { Number = 1 }, new { Number = 2 } },
-            new [] { new { Text = "some text" }, new { Text = "other text" } }
+            new [] { new { Text = "some text" }, new { Text = "other text" } },
+            new [] { new { Number = 1, Text = "some text" }, new { Number = 1, Text = "other text" } }
         };
         [TestCaseSource(nameof(NotEqualCases))]
         public void Test_SimpleObject_Is_NotEqual(object item1, object item2) {
